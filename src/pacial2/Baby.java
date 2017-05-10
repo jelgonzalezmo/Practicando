@@ -5,6 +5,9 @@
  */
 package pacial2;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 /**
@@ -16,7 +19,7 @@ public class Baby {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Insumos I1 = new Insumos("boton", 300, 5465);
         Insumos I2 = new Insumos("broche", 300, 5465);
         Insumos I3 = new Insumos("cremallera", 300, 5465);
@@ -48,6 +51,10 @@ public class Baby {
         System.out.println(productos.toString() + " " + fac.toString());
         fac.total();
 
+        File A=new File("baby.txt");
+        PrintStream s=new PrintStream("baby.txt");
+       s.print(productos.toString() + " " + fac.toString());
+        
     }
 
 }
